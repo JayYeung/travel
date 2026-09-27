@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Travel supplier interviews</title><link rel="stylesheet" href="/style.css"></head>
+<body><main class="shell">
+  <header><div class="brand"><span class="mark">✦</span><div><strong>Fieldwork</strong><small>Travel supplier research</small></div></div><span class="tag">Interview bot · prototype</span></header>
+  <section class="hero"><p class="eyebrow">CUSTOMER DISCOVERY</p><h1>Learn how local travel businesses find customers.</h1><p>Use an OpenAI-powered voice companion alongside Google Meet to interview hotels, guides, and tour operators about bookings, demand gaps, and useful new customer leads.</p></section>
+  <div class="grid"><section class="card setup"><div class="sectionhead"><span class="step">01</span><div><h2>Set up an interview</h2><p>Add enough context to make the questions relevant.</p></div></div>
+    <div class="split"><label>Local business<input id="company" value="Unknown local travel business" placeholder="e.g. guesthouse, guide, tour company"></label><label>Interviewee role<input id="role" value="Owner or manager — confirm" placeholder="e.g. owner, manager, guide"></label></div>
+    <label>Context or hypothesis<textarea id="context" rows="3">Learn how this local travel business gets bookings today, whether it wants more direct customers or agency referrals, and what would make a new lead source useful. Ask about a recent real booking and any seasonal gaps. Do not assume it needs help.</textarea></label>
+    <label>Google Meet link <span class="optional">(for your reference)</span><input id="meetingUrl" type="url" placeholder="https://meet.google.com/abc-defg-hij"></label>
+    <div class="buttons"><button id="openMeet" class="secondary">Open Meet ↗</button><button id="startVoice" class="primary">Start voice companion <span>↗</span></button><button id="startDemo" class="secondary">Rehearse with text</button></div><p id="setupMessage" class="message"></p>
+    <p class="fine">The companion runs in this tab using the OpenAI key on your local server. It is not a separate participant. Tell guests they are speaking with an AI interviewer and that notes will be saved.</p>
+  </section>
+  <section class="card session"><div class="sectionhead"><span class="step">02</span><div><h2>Interview room</h2><p id="sessionState">Start or select an interview to see it here.</p></div></div>
+    <div id="empty" class="empty"><div class="emptyicon">◎</div><h3>Ready when you are</h3><p>The live transcript and interview controls will appear here.</p></div>
+    <div id="active" hidden><div class="statusrow"><span id="statusPill" class="pill">Ready</span><span id="sessionMeta"></span></div>
+      <div id="voicePanel" class="voicepanel" hidden><strong>Voice companion setup</strong><ol><li>In the picker, choose the Google Meet tab and turn on <b>Share tab audio</b>.</li><li>In Meet, present this Fieldwork tab with tab audio so the guest can hear the interviewer.</li><li>Return here and click <b>Begin interview</b>.</li></ol><div class="buttons"><button id="beginVoice" class="primary">Begin interview</button><button id="processVoice" class="secondary">Process answer now</button><button id="stopVoice" class="secondary">Stop listening</button></div><p id="voiceState" class="fine">Waiting to begin.</p></div>
+      <div id="transcript" class="transcript"></div>
+      <div id="rehearsal" class="answer" hidden><textarea id="answer" rows="2" placeholder="Type the guest's answer..."></textarea><button id="sendAnswer" class="primary">Send answer</button></div>
+      <div class="buttons smallbuttons"><button id="summarize" class="secondary">Generate summary</button><button id="download" class="secondary">Download notes</button><button id="stop" class="quiet">End interview</button></div><p id="sessionMessage" class="message"></p><div id="summary" class="summary" hidden></div></div>
+  </section></div>
+  <section class="history"><div class="sectionhead"><span class="step">03</span><div><h2>Past interviews</h2><p>Saved locally on this server.</p></div></div><div id="sessions" class="sessionlist"></div></section>
+  <footer>Built for learning how local travel businesses win customers. Interview answers are research data, not verified business records.</footer>
+</main><script type="module" src="/app.js"></script></body></html>
