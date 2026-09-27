@@ -14,7 +14,7 @@ export class VoiceCompanion {
     const source = this.audioContext.createMediaStreamSource(new MediaStream(stream.getAudioTracks()));
     this.analyser = this.audioContext.createAnalyser(); this.analyser.fftSize = 2048; source.connect(this.analyser);
     this.samples = new Float32Array(this.analyser.fftSize);
-    this.setState("Meet audio connected. Present this Fieldwork tab with audio, then begin.");
+    this.setState("Meet audio connected. Present this Markout Travel Agency tab with audio, then begin.");
   }
   prepare(sessionId) { this.sessionId = sessionId; this.started = false; this.active = true; }
   async begin() {

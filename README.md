@@ -1,4 +1,4 @@
-# Fieldwork: local travel business interviews
+# Markout Travel Agency: local travel business interviews
 
 An OpenAI-powered interview companion for local hotels, guides, tour operators, and similar businesses. It asks how they get bookings and whether they want help finding new customers or agency referrals, then saves a transcript and research summary.
 
@@ -18,10 +18,10 @@ Your own Meet link can be kept in `local-config.json` as `{ "meetingUrl": "https
 
 For a voice demo during a Meet call:
 
-1. Join Meet in Chrome, then open Fieldwork in another tab.
-2. Click **Start voice companion**. In Chrome's picker, choose the **Meet tab** and enable **Share tab audio**. This lets Fieldwork hear the guest.
-3. In Meet, use **Present now** to share the **Fieldwork tab**, again enabling tab audio. This lets the guest hear the interviewer's voice.
-4. Back in Fieldwork, click **Begin interview**. The companion asks for consent, listens for the guest's answer, and continues automatically after pauses.
+1. Join Meet in Chrome, then open Markout Travel Agency in another tab.
+2. Click **Start voice companion**. In Chrome's picker, choose the **Meet tab** and enable **Share tab audio**. This lets Markout Travel Agency hear the guest.
+3. In Meet, use **Present now** to share the **Markout Travel Agency tab**, again enabling tab audio. This lets the guest hear the interviewer's voice.
+4. Back in Markout Travel Agency, click **Begin interview**. The companion asks for consent, listens for the guest's answer, and continues automatically after pauses.
 
 The companion is a shared tab, not a separate Meet participant. It never joins the call on its own. A separate local session token protects the API and is bootstrapped into this browser tab; it is not the OpenAI key. Sessions are saved as JSON in `sessions/` and excluded from Git. The OpenAI API key is read only on the server and is never sent in browser HTML or JavaScript. Interview audio is sent to the local server, then to OpenAI for transcription.
 
@@ -40,7 +40,7 @@ The interviewer asks one question per turn and follows up on concrete answers. I
 
 ## Current limits
 
-- Chrome requires you to select the Meet tab for capture and share the Fieldwork tab into Meet. A single OpenAI API key cannot create a separate Google Meet participant.
+- Chrome requires you to select the Meet tab for capture and share the Markout Travel Agency tab into Meet. A single OpenAI API key cannot create a separate Google Meet participant.
 - The browser listens for pauses in meeting audio. Background noise, overlapping speakers, and short pauses can cause missed or split turns; use **Stop listening** if it misbehaves.
 - The voice path requires a real browser and Meet tab, so automated tests cover only the server flow. The OpenAI text and speech endpoints were checked with the configured key; the two-tab audio routing still needs an in-call check.
 

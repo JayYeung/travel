@@ -61,7 +61,7 @@ $("startVoice").onclick = async () => {
   try {
     await companion.capture();
     const session = await api("/api/sessions", "POST", { mode: "companion", meetingUrl: $("meetingUrl").value.trim(), company: $("company").value.trim(), role: $("role").value.trim(), context: $("context").value.trim() });
-    companion.prepare(session.id); render(session); await refresh(); setMessage("setupMessage", "Meet audio connected. Present this Fieldwork tab with audio, then click Begin interview.");
+    companion.prepare(session.id); render(session); await refresh(); setMessage("setupMessage", "Meet audio connected. Present this Markout Travel Agency tab with audio, then click Begin interview.");
   } catch (err) { companion.stop(); setMessage("setupMessage", err.message); } finally { busy = false; }
 };
 $("startDemo").onclick = start;
